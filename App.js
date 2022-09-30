@@ -15,30 +15,9 @@ function App() {
 
     
     <NavigationContainer>
-      <Stack.Navigator  >
-      <Stack.Screen name="Chat" component={Home}  options={{
-        title: 'Chat',
-        headerTitleAlign: 'center',
-         headerTintColor: 'white',
-         headerStyle: {
-            backgroundColor: 'royalblue'
-         },         
-         headerLeft: () => <TouchableOpacity title="Info"><Image source={require('./assets/Vector.png')}></Image></TouchableOpacity>,
-
-         headerRight: () => <TouchableOpacity title="Info"><Image source={require('./assets/Vector2.png')}></Image></TouchableOpacity>
-  }}/>
-  
-  <Stack.Screen name="DayCap" component={DayCap}  options={{
-        title: 'DayCap',
-        headerTitleAlign: 'center',
-         headerTintColor: 'white',
-         headerStyle: {
-            backgroundColor: 'royalblue'
-         },         
-         headerLeft: () => <TouchableOpacity title="Info"><Image source={require('./assets/Vector.png')}></Image></TouchableOpacity>,
-
-         headerRight: () => <TouchableOpacity title="Info"><Image source={require('./assets/Vector2.png')}></Image></TouchableOpacity>
-  }}/>
+      <Stack.Navigator screenOptions={{headerShown:false}}>
+      <Stack.Screen name="Chat" component={Home} /> 
+      <Stack.Screen name="DayCap" component={DayCap} />
       </Stack.Navigator>
     </NavigationContainer>
   );

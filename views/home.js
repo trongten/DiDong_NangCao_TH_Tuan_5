@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, FlatList,Image,StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { SafeAreaView, ImageBackground,View, FlatList,Image,StyleSheet, Text, StatusBar, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -65,9 +65,14 @@ export default function Home({navigation}){
     
 
     return (
-        <SafeAreaView style={{flex: 1,marginTop: StatusBar.currentHeight || 0}}>
+        <SafeAreaView style={{flex: 1}}>
+          <ImageBackground  source={require('../assets/2.png')} resizeMode="cover" style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',height:50}}>
+            <Image style={{marginLeft:-50}} source={require('../assets/3.png')}></Image>
+            <Image source={require('../assets/5.png')}></Image>
+            <Image style={{marginRight:-50}}  source={require('../assets/4.png')}></Image>
+          </ImageBackground>
+
             <FlatList
-                
                 data={DATA}
                 renderItem={renderItem}
                 ListHeaderComponent={()=>
@@ -78,7 +83,6 @@ export default function Home({navigation}){
               <TouchableOpacity  onPress={()=> navigation.navigate('DayCap')} >
                 <Image style={{width:'100%'}} source={require('../assets/23.png')}></Image>
                 </TouchableOpacity>
-              
             </View>
         </SafeAreaView>
     )
